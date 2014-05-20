@@ -56,7 +56,7 @@ class AddT extends rtorrent
 	{
 		if($start_now == 'on')
 		{
-			$method = 'load_start';
+			$method = 'load.start';
 		}
 		else
 		{
