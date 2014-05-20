@@ -26,7 +26,7 @@ class Tracker extends rtorrent
 		if(!$this->setClient())
 			return false;
 			
-		$array_t = array('t.get_url', 't.get_normal_interval','t.get_scrape_time_last', 't.get_scrape_complete','t.get_scrape_incomplete','t.is_enabled');
+		$array_t = array('t.url', 't.normal_interval','t.scrape_time_last', 't.scrape_complete','t.scrape_incomplete','t.is_enabled');
 		$this->multicall->t_multicall($this->hash, $array_t);
 	}
 	public function getHash()

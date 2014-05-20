@@ -152,43 +152,43 @@ class torrent
 	/* Download methods */
 	public function get_name($multicall = false, $update = false)
 	{
-		return $this->get_info('d.get_name', $multicall, $update);
+		return $this->get_info('d.name', $multicall, $update);
 	}
 	public function get_down_rate($multicall = false, $update = false)
 	{
-		return $this->get_info('d.get_down_rate', $multicall, $update);
+		return $this->get_info('d.down.rate', $multicall, $update);
 	}
 	public function get_up_rate($multicall = false, $update = false)
 	{
-		return $this->get_info('d.get_up_rate', $multicall, $update);
+		return $this->get_info('d.up.rate', $multicall, $update);
 	}
 	public function get_chunk_size($multicall = false, $update = false)
 	{
-		return $this->get_info('d.get_chunk_size', $multicall, $update);
+		return $this->get_info('d.chunk_size', $multicall, $update);
 	}
 	public function get_completed_chunks($multicall = false, $update = false)
 	{
-		return $this->get_info('d.get_completed_chunks', $multicall, $update);
+		return $this->get_info('d.completed_chunks', $multicall, $update);
 	}
 	public function get_size_chunks($multicall = false, $update = false)
 	{
-		return $this->get_info('d.get_size_chunks', $multicall, $update);
+		return $this->get_info('d.size_chunks', $multicall, $update);
 	}
 	public function get_state($multicall = false, $update = false)
 	{
-		return $this->get_info('d.get_state', $multicall, $update);
+		return $this->get_info('d.state', $multicall, $update);
 	}
 	public function get_peers_accounted($multicall = false, $update = false)
 	{
-		return $this->get_info('d.get_peers_accounted', $multicall, $update);
+		return $this->get_info('d.peers_accounted', $multicall, $update);
 	}
 	public function get_peers_complete($multicall = false, $update = false)
 	{
-		return $this->get_info('d.get_peers_complete', $multicall, $update);
+		return $this->get_info('d.peers_complete', $multicall, $update);
 	}
 	public function get_peers_connected($multicall = false, $update = false)
 	{
-		return $this->get_info('d.get_peers_connected', $multicall, $update);
+		return $this->get_info('d.peers_connected', $multicall, $update);
 	}
 	public function is_hash_checking($multicall = false, $update = false)
 	{
@@ -196,11 +196,11 @@ class torrent
 	}
 	public function get_ratio($multicall = false, $update = false)
 	{
-		return $this->get_info('d.get_ratio', $multicall, $update);
+		return $this->get_info('d.ratio', $multicall, $update);
 	}
 	public function get_tracker_size($multicall = false, $update = false)
 	{
-		return $this->get_info('d.get_tracker_size', $multicall, $update);
+		return $this->get_info('d.tracker_size', $multicall, $update);
 	}
 	public function is_active($multicall = false, $update = false)
 	{
@@ -212,35 +212,35 @@ class torrent
 	}
 	public function get_message($multicall = false, $update = false)
 	{
-		return $this->get_info('d.get_message', $multicall, $update);
+		return $this->get_info('d.message', $multicall, $update);
 	}
 	public function get_creation_date($multicall = false, $update = false)
 	{
-		return $this->get_info('d.get_creation_date', $multicall, $update);
+		return $this->get_info('d.creation_date', $multicall, $update);
 	}
 	public function get_size_files($multicall = false, $update = false)
 	{
-		return $this->get_info('d.get_size_files', $multicall, $update);
+		return $this->get_info('d.size_files', $multicall, $update);
 	}
 	public function get_tied_to_file($multicall = false, $update = false)
 	{
-		return $this->get_info('d.get_tied_to_file', $multicall, $update);
+		return $this->get_info('d.tied_to_file', $multicall, $update);
 	}
 	public function get_base_path($multicall = false, $update = false)
 	{
-		return $this->get_info('d.get_base_path', $multicall, $update);
+		return $this->get_info('d.base_path', $multicall, $update);
 	}
 	public function get_peers_max($multicall = false, $update = false)
 	{
-		return $this->get_info('d.get_peers_max', $multicall, $update);
+		return $this->get_info('d.peers_max', $multicall, $update);
 	}
 	public function get_peers_min($multicall = false, $update = false)
 	{
-		return $this->get_info('d.get_peers_min', $multicall, $update);
+		return $this->get_info('d.peers_min', $multicall, $update);
 	}
 	public function d_get_priority($multicall = false, $update = false)
 	{
-		return $this->get_info('d.get_priority', $multicall, $update);
+		return $this->get_info('d.priority', $multicall, $update);
 	}
 	public function d_set_priority($priority, $multicall = false)
 	{
@@ -258,15 +258,15 @@ class torrent
 		return $return;
 	}
 	public function get_left_bytes($multicall = false, $update = false) {
-		return $this->get_info('d.get_left_bytes', $multicall, $update);
+		return $this->get_info('d.left_bytes', $multicall, $update);
 	}
 	public function get_size_bytes($multicall = false, $update = false) {
-		return $this->get_info('d.get_size_bytes', $multicall, $update);
+		return $this->get_info('d.size_bytes', $multicall, $update);
 	}
 	/* Tracker methods */
 	public function t_set_enabled($tracker, $enabled, $multicall = false)
 	{
-		$message = new xmlrpcmsg('t.set_enabled', array(new xmlrpcval($this->hash, 'string'), new xmlrpcval($tracker, 'int'), new xmlrpcval($enabled, 'int')));
+		$message = new xmlrpcmsg('t.is_enabled.set', array(new xmlrpcval($this->hash, 'string'), new xmlrpcval($tracker, 'int'), new xmlrpcval($enabled, 'int')));
 		
 		if($multicall === true)
 		{
@@ -281,15 +281,15 @@ class torrent
 	}
 	public function t_get_url($tracker, $multicall = false, $update = false)
 	{
-		return $this->get_info_object('t.get_url', $tracker, $multicall, $update);
+		return $this->get_info_object('t.url', $tracker, $multicall, $update);
 	}
 	public function t_get_scrape_complete($tracker, $multicall = false, $update = false)
 	{
-		return $this->get_info_object('t.get_scrape_complete', $tracker, $multicall, $update);
+		return $this->get_info_object('t.scrape_complete', $tracker, $multicall, $update);
 	}
 	public function t_get_scrape_incomplete($tracker, $multicall = false, $update = false)
 	{
-		return $this->get_info_object('t.get_scrape_incomplete', $tracker, $multicall, $update);
+		return $this->get_info_object('t.scrape_incomplete', $tracker, $multicall, $update);
 	}
 	public function t_is_enabled($tracker, $multicall = false, $update = false)
 	{
@@ -298,7 +298,7 @@ class torrent
 	/* Files methods */
 	public function f_set_priority($file, $priority, $multicall = false)
 	{
-		$message = new xmlrpcmsg('f.set_priority', array(new xmlrpcval($this->hash, 'string'), new xmlrpcval($file, 'int'), new xmlrpcval($priority, 'int')));
+		$message = new xmlrpcmsg('f.priority.set', array(new xmlrpcval($this->hash, 'string'), new xmlrpcval($file, 'int'), new xmlrpcval($priority, 'int')));
 		
 		if($multicall === true)
 		{
@@ -313,32 +313,32 @@ class torrent
 	}
 	public function f_get_path($param, $multicall = false, $update = false)
 	{
-		return $this->get_info_object('f.get_path', $param, $multicall, $update);
+		return $this->get_info_object('f.path', $param, $multicall, $update);
 	}
 	public function f_get_completed_chunks($param, $multicall = false, $update = false)
 	{
-		return $this->get_info_object('f.get_completed_chunks', $param, $multicall, $update);
+		return $this->get_info_object('f.completed_chunks', $param, $multicall, $update);
 	}
 	public function f_get_size_chunks($param, $multicall = false, $update = false)
 	{
-		return $this->get_info_object('f.get_size_chunks',$param,  $multicall, $update);
+		return $this->get_info_object('f.size_chunks',$param,  $multicall, $update);
 	}
 	public function f_get_priority($param, $multicall = false, $update = false)
 	{
-		return $this->get_info_object('f.get_priority', $param, $multicall, $update);
+		return $this->get_info_object('f.priority', $param, $multicall, $update);
 	}
 	/* Peers methods */
 	public function p_get_address($param, $multicall = false, $update = false)
 	{
-		return $this->get_info_object('p.get_address', $param, $multicall, $update);
+		return $this->get_info_object('p.address', $param, $multicall, $update);
 	}
 	public function p_get_down_rate($param, $multicall = false, $update = false)
 	{
-		return $this->get_info_object('p.get_down_rate', $param, $multicall, $update);
+		return $this->get_info_object('p.down_rate', $param, $multicall, $update);
 	}
 	public function p_get_up_rate($param, $multicall = false, $update = false)
 	{
-		return $this->get_info_object('p.get_up_rate', $param, $multicall, $update);
+		return $this->get_info_object('p.up_rate', $param, $multicall, $update);
 	}
 	public function p_is_incoming($param, $multicall = false, $update = false)
 	{
@@ -346,7 +346,7 @@ class torrent
 	}
 	public function p_get_completed_percent($param, $multicall = false, $update = false)
 	{
-		return $this->get_info_object('p.get_completed_percent', $param, $multicall, $update);
+		return $this->get_info_object('p.completed_percent', $param, $multicall, $update);
 	}
 	public function p_is_encrypted($param, $multicall = false, $update = false)
 	{
@@ -354,11 +354,11 @@ class torrent
 	}
 	public function p_get_peer_rate($param, $multicall = false, $update = false)
 	{
-		return $this->get_info_object('p.get_peer_rate', $param, $multicall, $update);
+		return $this->get_info_object('p.peer_rate', $param, $multicall, $update);
 	}
 	public function p_get_client_version($param, $multicall = false, $update = false)
 	{
-		return $this->get_info_object('p.get_client_version', $param, $multicall, $update);
+		return $this->get_info_object('p.client_version', $param, $multicall, $update);
 	}
 	/* wTorrent specific atributes */
 	public function get_private()

@@ -167,7 +167,7 @@ class rtorrent extends Web
 	}
 	/* Initializes torrent objects */
 	protected function setTorrents() {
-		$message = new xmlrpcmsg("d.multicall", array(new xmlrpcval($this->rtorrent_view, 'string'),new xmlrpcval('d.get_hash=', 'string')));
+		$message = new xmlrpcmsg("d.multicall", array(new xmlrpcval($this->rtorrent_view, 'string'),new xmlrpcval('d.hash=', 'string')));
 		$result = $this->client->send($message);
 		if(is_array($result->val))
 		{
@@ -290,16 +290,16 @@ class rtorrent extends Web
 	}
 	public function view_list($multicall = false, $update = false)
 	{
-		return $this->get_info_rtorrent('view_list', $multicall, $update);
+		return $this->get_info_rtorrent('view.list', $multicall, $update);
 	}
 	/* Upload/Download rate functions */
 	public function get_down_rate($multicall = false, $update = false)
 	{
-		return $this->get_info_rtorrent('get_down_rate', $multicall, $update);
+		return $this->get_info_rtorrent('throttle.global_down.rate', $multicall, $update);
 	}
 	public function get_up_rate($multicall = false, $update = false)
 	{
-		return $this->get_info_rtorrent('get_up_rate', $multicall, $update);
+		return $this->get_info_rtorrent('throttle.global_up.rate', $multicall, $update);
 	}
 	/* rTorrent info functions */
 	public function getDownload() 

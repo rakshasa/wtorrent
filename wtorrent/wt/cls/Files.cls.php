@@ -26,7 +26,7 @@ class Files extends rtorrent
 		if(!$this->setClient())
 			return false;
 			
-		$array_f = array('f.get_path', 'f.get_completed_chunks', 'f.get_size_chunks','f.get_priority');
+		$array_f = array('f.path', 'f.completed_chunks', 'f.size_chunks','f.priority');
 		$this->multicall->f_multicall($this->hash, $array_f);
 	}
 	public function getHash()

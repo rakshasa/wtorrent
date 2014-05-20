@@ -26,7 +26,7 @@ class Peers extends rtorrent
 		if(!$this->setClient())
 			return false;
 			
-		$array_p = array('p.get_address', 'p.get_down_rate', 'p.get_up_rate','p.is_incoming', 'p.get_completed_percent', 'p.is_encrypted', 'p.get_peer_rate', 'p.get_client_version');
+		$array_p = array('p.address', 'p.down_rate', 'p.up_rate','p.is_incoming', 'p.completed_percent', 'p.is_encrypted', 'p.peer_rate', 'p.client_version');
 		$this->multicall->p_multicall($this->hash, $array_p);
 	}
 	public function getHash()

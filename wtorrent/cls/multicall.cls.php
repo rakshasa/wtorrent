@@ -97,7 +97,7 @@ class multicall
 			return true;
 		}
 
-		$result = $this->performMulticall('d.multicall', array($view), $methods);
+		$result = $this->performMulticall('d.multicall2', array($view), $methods);
 		if ($result === false)
 	   	{
 			return false;

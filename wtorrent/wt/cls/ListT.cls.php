@@ -28,28 +28,28 @@ class ListT extends rtorrent
 	private static $INFLIMIT = 1209600; // 14 days
 
 	private static $DOWNLOAD_VALUES = array(
-		'd.get_name',
-		'd.get_down_rate',
-		'd.get_up_rate',
-		'd.get_chunk_size',
-		'd.get_completed_chunks',
-		'd.get_size_chunks',
-		'd.get_state',
-		'd.get_peers_accounted',
-		'd.get_peers_complete',
+		'd.name',
+		'd.down.rate',
+		'd.up.rate',
+		'd.chunk_size',
+		'd.completed_chunks',
+		'd.size_chunks',
+		'd.state',
+		'd.peers_accounted',
+		'd.peers_complete',
 		'd.is_hash_checking',
-		'd.get_ratio',
-		'd.get_tracker_size',
+		'd.ratio',
+		'd.tracker_size',
 		'd.is_active',
 		'd.is_open',
-		'd.get_message',
-		'd.get_creation_date',
-		'd.get_left_bytes',
-		'd.get_size_bytes'
+		'd.message',
+		'd.creation_date',
+		'd.left_bytes',
+		'd.size_bytes'
 	);
 	private static $TORRENT_VALUES = array(
-		't.get_scrape_complete',
-		't.get_scrape_incomplete'
+		't.scrape_complete',
+		't.scrape_incomplete'
 	);
 
 	private $view;

@@ -133,11 +133,11 @@ class AddT extends rtorrent
 		$result1 = $this->client->send($message);
 		if($start_now == 'on')
 		{
-			$method = 'load_start';
+			$method = 'load.start';
 		}
 		else
 		{
-			$method = 'load';
+			$method = 'load.normal';
 		}
 		if ($private == 'on')
 		{ 
@@ -219,11 +219,11 @@ class AddT extends rtorrent
 
 		if($start_now == 'on')
 		{
-			$method = 'load_start';
+			$method = 'load.start';
 		}
 		else
 		{
-			$method = 'load';
+			$method = 'load.normal';
 		}
 		if($private == 'on')
 		{
